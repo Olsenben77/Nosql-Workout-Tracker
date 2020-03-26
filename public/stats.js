@@ -1,12 +1,10 @@
 "use strict";
 
 // get all workout data from back-end
-
-fetch(`/api/workouts/range`)
-  .then(response => response.json())
-  .then(data => populateChart(data));
-
-API.getWorkoutsInRange();
+API.getWorkoutsInRange().then(data => {
+  console.log(data);
+  populateChart(data);
+});
 
 function generatePalette() {
   return [
@@ -112,7 +110,13 @@ function populateChart(data) {
 }
 
 function getTotalDurations(workouts) {
-  return workouts.map(workout => workout.totalDuration);
+  let durations = workouts.map(workout =>
+    workout.exercises.reduce((total, exercise) => {
+      return total + exercise.duration;
+    })
+  );
+  console.log(durations);
+  return durations;
 }
 
 function calculateAverageWeight(workouts) {

@@ -21,14 +21,15 @@ router.post("/api/workouts", function(req, res) {
     .catch(err => console.log(err));
 });
 
-// router.put("/api/workouts/:id", function(req, res) {
-//   console.log(req.params.id);
-//   db.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(
-//     err,
-//     data
-//   ) {
-//     res.send(data);
-//   });
-// });
-// }); //update collection with req.body where id = req.params.id
+router.put("/api/workouts/:id", function(req, res) {
+  console.log(req.params.id);
+  console.log(req.body);
+  db.findByIdAndUpdate(req.params.id, { $push: { exercises: req.body } })
+    .then(response => res.json(response))
+    .catch(err => console.log(err));
+});
+//}); //update collection with req.body where id = req.params.id
+router.get("/api/workouts/range", function(req, res) {
+  db.find().then(data => res.json(data));
+});
 module.exports = router;
