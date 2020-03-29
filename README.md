@@ -38,5 +38,6 @@ For the future adding various aspects and addons to Chart.js would be helpful, e
 ## References
 
 https://www.youtube.com/watch?v=yUsxRaOYVG4&feature=youtu.be
+https://www.youtube.com/watch?v=2E8eWUHJaNg&feature=youtu.be&list=PLOFmg4xbN_TPrB6w4rThsFanVxJI_SfER
 https://coursework.vschool.io/mongoose-crud/
 https://htmlcheatsheet.com/jquery/
