@@ -113,7 +113,7 @@ function getTotalDurations(workouts) {
   let durations = workouts.map(workout =>
     workout.exercises.reduce((total, exercise) => {
       return total + exercise.duration;
-    })
+    }, 0)
   );
   console.log(durations);
   return durations;
