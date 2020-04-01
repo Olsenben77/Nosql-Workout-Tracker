@@ -11,7 +11,8 @@ app.use(express.static("public"));
 app.use(router);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://user:password1@ds053380.mlab.com:53380/heroku_61vbc4m2, {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useUnifiedTopology: true
 });
 
 app.listen(PORT, () => {
