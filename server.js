@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+//changed server
 app.use(express.static("public"));
 app.use(router);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://user:password1@ds053380.mlab.com:53380/heroku_61vbc4m2, {
